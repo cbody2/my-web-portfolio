@@ -1,0 +1,5 @@
+* { /* select every single html element on the page & apply this to all of them*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
