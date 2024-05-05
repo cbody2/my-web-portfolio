@@ -64,6 +64,7 @@ main, section, .nameContainer {
 
 main {
     gap: 64px;
+    padding-bottom: 64px;
 }
 
 section {
@@ -159,19 +160,39 @@ section {
     gap: 12px;
 }
 
-.projectItem div:last-child {
+.projectItem>div:last-child {
     aspect-ratio: 16/9; /* 16/9 is a popular aspect ratio b/c it's suited for videos and TV
     think: Widescreen! With aspect ratio, the dimensions of the div won't change no matter the
     screen size */
     max-width: 30%;
     overflow: hidden;
+    border-radius: 8px;
 }
 
-.projectItem div:last-child img {
+/* > is for direct descendants to avoid confusion or unintended changes */
+
+.projectItem>div:last-child img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+}
+
+.linkContainer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.linkItem {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 12px !important;
+    color: var(--primary-color);
+}
+
+.linkItem p {
+    font-size: 0.9em;
 }
 
 @media (min-width: 640px) { /* adjusting for a non-mobile screen, 320px
