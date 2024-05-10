@@ -1,7 +1,7 @@
 :root { /* CSS Variables to re-use (save time) --> var() */
-    --primary-color: #adf0d4;
-    --secondary-color: #1fd8a4;
-    --bg-color: #0d1512;
+    --primary-color: #f4abab;
+    --secondary-color: #e64444;
+    --bg-color: #171514;
 }
 
 * { /* select every single html element on the page & apply this to all of them*/
@@ -45,7 +45,7 @@ header {
 nav {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
 }
 
 nav a {
@@ -126,6 +126,7 @@ section {
     align-items: center;
     gap: 12px;
     cursor: pointer;
+    text-decoration: none;
     width: fit-content; /* with margin, it cuts off the extended empty space after the contente ends */
     margin-right: auto;
 }
@@ -141,7 +142,7 @@ section {
 .projectContainer {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 }
 
 .headerText {
@@ -185,10 +186,15 @@ section {
 
 .linkItem {
     display: flex;
-    flex-direction: row !important;
     align-items: center;
     gap: 12px !important;
     color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.linkItem:hover {
+    opacity: 0.5;
 }
 
 .linkItem p {
@@ -211,3 +217,17 @@ section {
         margin-right: auto;
     }
 }
+
+/* added spin animation to my profile pic for cool effects :) */
+
+@keyframes spin {
+    to {
+      transform: rotateY(3turn);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .imgContainer {
+      animation: spin 5s ease both 2;
+    }
+  }
